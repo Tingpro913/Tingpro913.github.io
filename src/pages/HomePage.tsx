@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'assistant',
-      content: '你好，我是 LT 的数字分身。你可以问我关于 LT 的职业、经验或近况的问题。',
+      content: '嗨，我是 LT 的数字分身～想了解 LT 的经历、方向或近况，尽管问我吧。',
     },
   ]);
   const [input, setInput] = useState('');
@@ -128,7 +128,7 @@ const HomePage: React.FC = () => {
             <CardHeader className="pb-2">
               <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
                 <Sparkles className="h-4 w-4 text-accent" />
-                我现在主要在做
+                我正在做
               </CardTitle>
             </CardHeader>
             <CardContent>
@@ -165,7 +165,7 @@ const HomePage: React.FC = () => {
 
           <Card className="bg-card border-border">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base md:text-lg font-semibold">我的记忆点</CardTitle>
+              <CardTitle className="text-base md:text-lg font-semibold">我的标签</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="grid gap-2">
@@ -188,10 +188,10 @@ const HomePage: React.FC = () => {
             <CardHeader className="bg-muted/50 border-b border-border pb-4">
               <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
                 <Bot className="h-5 w-5 text-accent" />
-                数字分身聊天区
+                Digital Me
               </CardTitle>
               <CardDescription className="text-muted-foreground">
-                向 LT 的数字分身提问，快速了解 TA 的经历与方向
+                想了解 LT 的经历、方向或近况，尽管问我吧
               </CardDescription>
             </CardHeader>
 
