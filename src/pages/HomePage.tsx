@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import { Send, User, Bot, Sparkles } from 'lucide-react';
+import { Send, User, Bot, Sparkles, Compass, Tag } from 'lucide-react';
 import { toast } from 'sonner';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -105,25 +105,25 @@ const HomePage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="mx-auto max-w-3xl px-4 py-12 md:py-16">
+      <div className="mx-auto max-w-3xl px-4 py-8 md:py-10">
         {/* 头部区域 */}
         <section className="flex flex-col items-center text-center">
-          <Avatar className="h-24 w-24 md:h-28 md:w-28 border-2 border-border shadow-sm">
+          <Avatar className="h-20 w-20 md:h-24 md:w-24 border-2 border-border shadow-sm">
             <AvatarImage src="/images/avatar.svg" alt={`${profile.name} 的头像`} />
             <AvatarFallback className="bg-muted text-foreground text-2xl">
               {profile.name}
             </AvatarFallback>
           </Avatar>
-          <h1 className="mt-6 text-3xl md:text-4xl font-semibold tracking-tight">
+          <h1 className="mt-4 text-2xl md:text-3xl font-semibold tracking-tight">
             {profile.name}
           </h1>
-          <p className="mt-2 text-base md:text-lg text-muted-foreground max-w-md">
+          <p className="mt-1.5 text-sm md:text-base text-muted-foreground max-w-md">
             {profile.tagline}
           </p>
         </section>
 
         {/* 个人信息展示区 */}
-        <section className="mt-10 grid gap-4">
+        <section className="mt-6 grid gap-3">
           <Card className="bg-card border-border">
             <CardHeader className="pb-2">
               <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
@@ -147,7 +147,10 @@ const HomePage: React.FC = () => {
 
           <Card className="bg-card border-border">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base md:text-lg font-semibold">我的兴趣</CardTitle>
+              <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
+                <Compass className="h-4 w-4 text-accent" />
+                我的兴趣
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="flex flex-wrap gap-2">
@@ -165,7 +168,10 @@ const HomePage: React.FC = () => {
 
           <Card className="bg-card border-border">
             <CardHeader className="pb-2">
-              <CardTitle className="text-base md:text-lg font-semibold">我的标签</CardTitle>
+              <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
+                <Tag className="h-4 w-4 text-accent" />
+                我的标签
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="grid gap-2">
@@ -180,12 +186,12 @@ const HomePage: React.FC = () => {
           </Card>
         </section>
 
-        <Separator className="my-10 bg-border" />
+        <Separator className="my-6 bg-border" />
 
         {/* 数字分身聊天区 */}
         <section>
           <Card className="bg-card border-border overflow-hidden">
-            <CardHeader className="bg-muted/50 border-b border-border pb-4">
+            <CardHeader className="bg-muted/50 border-b border-border pb-3">
               <CardTitle className="text-base md:text-lg font-semibold flex items-center gap-2">
                 <Bot className="h-5 w-5 text-accent" />
                 Digital Me
@@ -198,7 +204,7 @@ const HomePage: React.FC = () => {
             <CardContent className="p-0">
               <ScrollArea
                 ref={scrollRef}
-                className="h-80 md:h-96 px-4 py-4"
+                className="h-64 md:h-72 px-4 py-4"
               >
                 <div className="space-y-4">
                   {messages.map((message, index) => (
